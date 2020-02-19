@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Helpers.Cart", "Helpers.Car
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entities.Cart", "Entities.Cart\Entities.Cart.csproj", "{35258502-C6DD-446F-BAA5-7C0052B5440A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Services.Cart", "Services.Cart\Services.Cart.csproj", "{C17B63B7-9210-46B5-B7F4-F03598CEEB71}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{35258502-C6DD-446F-BAA5-7C0052B5440A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{35258502-C6DD-446F-BAA5-7C0052B5440A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{35258502-C6DD-446F-BAA5-7C0052B5440A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C17B63B7-9210-46B5-B7F4-F03598CEEB71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C17B63B7-9210-46B5-B7F4-F03598CEEB71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C17B63B7-9210-46B5-B7F4-F03598CEEB71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C17B63B7-9210-46B5-B7F4-F03598CEEB71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
