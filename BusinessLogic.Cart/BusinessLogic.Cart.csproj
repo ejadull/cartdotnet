@@ -46,11 +46,17 @@
     <Compile Include="AspNetUserClaimsBL.cs" />
     <Compile Include="AspNetUserLoginsBL.cs" />
     <Compile Include="AspNetUsersBL.cs" />
+    <Compile Include="CartItemBL.cs" />
+    <Compile Include="CategoriesBL.cs" />
     <Compile Include="IAspNetRolesBL.cs" />
     <Compile Include="IAspNetUserClaimsBL.cs" />
     <Compile Include="IAspNetUserLoginsBL.cs" />
     <Compile Include="IAspNetUsersBL.cs" />
     <Compile Include="IBusinessLogic.cs" />
+    <Compile Include="ICartItemBL.cs" />
+    <Compile Include="ICategoriesBL.cs" />
+    <Compile Include="IProductsBL.cs" />
+    <Compile Include="ProductsBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

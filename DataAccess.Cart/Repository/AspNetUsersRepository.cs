@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Entities.Cart;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 
-namespace Entities.Cart.Repository
+namespace DataAccess.Cart.Repository
 {
     public class AspNetUsersRepository : IAspNetUsersRepository
     {
@@ -73,6 +74,11 @@ namespace Entities.Cart.Repository
             }
         }
 
+        public void Delete(string id)
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<AspNetUsers> GetAll()
         {
             try
@@ -103,6 +109,11 @@ namespace Entities.Cart.Repository
 
                 throw ex;
             }
+        }
+
+        public AspNetUsers GetById(string id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Update(AspNetUsers entity)

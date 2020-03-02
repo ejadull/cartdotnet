@@ -1,24 +1,34 @@
-﻿using System;
+﻿using Entities.Cart;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Entities.Cart.Repository
+namespace DataAccess.Cart.Repository
 {
-    public class AspNetUserClaimsRepository : IAspNetUserClaimsRepository
+    /// <summary>
+    /// La clase CartItem contiene el esquema que va a definir cada producto que un usuario agrega al carro de la compra.
+    /// Por Convención, Entity Framework Code First espera que la clave principal de la tabla CartItem sea CartItemId o ID. Sin embargo, el código invalida el comportamiento predeterminado mediante el atributo de anotación de datos [Key]. El atributo Key de la propiedad ItemId especifica que la propiedad ItemID es la clave principal
+    /// La propiedad CartId especifica el ID del usuario asociado al elemento que se va a comprar.Agregará código para crear este usuario ID cuando el usuario tenga acceso al carro de la compra. Esta ID también se almacenará como una variable de sesión ASP.NET.
+    /// </summary>
+    public class CartItemRepository : ICartItemRepository
     {
+     
+
         CartWebEntities context;
-        public AspNetUserClaimsRepository()
+        public CartItemRepository()
         {
             this.context = new CartWebEntities();
         }
- 
-        public void Create(AspNetUserClaims entity)
+
+        public void Create(CartItem entity)
         {
             try
             {
-                context.AspNetUserClaims.Add(entity);
+                context.CartItem.Add(entity);
                 context.Entry(entity).State = EntityState.Added;
                 context.SaveChanges();
             }
@@ -42,11 +52,27 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public void Delete(AspNetUserClaims entity)
+        public void Delete(CartItem entity)
         {
             try
             {
-                context.AspNetUserClaims.Remove(entity);
+                context.CartItem.Remove(entity);
+                context.Entry(entity).State = EntityState.Deleted;
+                context.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public void Delete(string id)
+        {
+            try
+            {
+                var entity = context.CartItem.Find(id);
+                context.CartItem.Remove(entity);
                 context.Entry(entity).State = EntityState.Deleted;
                 context.SaveChanges();
             }
@@ -59,27 +85,16 @@ namespace Entities.Cart.Repository
 
         public void Delete(int id)
         {
-            try
-            {
-                var entity = context.AspNetUserClaims.Find(id);
-                context.AspNetUserClaims.Remove(entity);
-                context.Entry(entity).State = EntityState.Deleted;
-                context.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<AspNetUserClaims> GetAll()
+        public IEnumerable<CartItem> GetAll()
         {
             try
             {
-                var result = new List<AspNetUserClaims>();
+                var result = new List<CartItem>();
 
-                result = context.AspNetUserClaims.ToList();
+                result = context.CartItem.ToList();
 
                 return result;
             }
@@ -90,12 +105,12 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public AspNetUserClaims GetById(int id)
+        public CartItem GetById(string id)
         {
             try
             {
-                AspNetUserClaims result = null;
-                result = context.AspNetUserClaims.Find(id);
+                CartItem result = null;
+                result = context.CartItem.Find(id);
                 return result;
             }
             catch (Exception ex)
@@ -105,7 +120,12 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public void Update(AspNetUserClaims entity)
+        public CartItem GetById(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(CartItem entity)
         {
             try
             {
@@ -118,5 +138,6 @@ namespace Entities.Cart.Repository
                 throw ex;
             }
         }
+ 
     }
 }

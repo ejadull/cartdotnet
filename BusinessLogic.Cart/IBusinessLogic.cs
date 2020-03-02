@@ -14,6 +14,7 @@ namespace BusinessLogic.Cart
         ///  
         ///  
         T GetById(int id);
+        T GetById(string id);
         ///  
         /// Create the object  
         ///  
@@ -29,6 +30,7 @@ namespace BusinessLogic.Cart
         ///  
         ///  
         void Delete(int id);
+        void Delete(string id);
         ///  
         /// Update the object  
         ///  

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Entities.Cart.Repository
+namespace DataAccess.Cart.Repository
 {
     public interface IRepository<T> where T : class
     {
@@ -14,6 +14,8 @@ namespace Entities.Cart.Repository
         ///  
         ///  
         T GetById(int id);
+
+        T GetById(string id);
         ///  
         /// Create the object  
         ///  
@@ -29,6 +31,7 @@ namespace Entities.Cart.Repository
         ///  
         ///  
         void Delete(int id);
+        void Delete(string id);
         ///  
         /// Update the object  
         ///  

@@ -1,24 +1,26 @@
-﻿using System;
+﻿using Entities.Cart;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 
-namespace Entities.Cart.Repository
+namespace DataAccess.Cart.Repository
 {
-    public class AspNetUserRepository : IAspNetRolesRepository
+    public class ProductsRepository : IProductsRepository
     {
+     
         CartWebEntities context;
-        public AspNetUserRepository()
+        public ProductsRepository()
         {
             this.context = new CartWebEntities();
         }
 
-        public void Create(AspNetRoles entity)
+        public void Create(Products entity)
         {
             try
             {
-                context.AspNetRoles.Add(entity);
+                context.Products.Add(entity);
                 context.Entry(entity).State = EntityState.Added;
                 context.SaveChanges();
             }
@@ -42,11 +44,11 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public void Delete(AspNetRoles entity)
+        public void Delete(Products entity)
         {
             try
             {
-                context.AspNetRoles.Remove(entity);
+                context.Products.Remove(entity);
                 context.Entry(entity).State = EntityState.Deleted;
                 context.SaveChanges();
             }
@@ -61,8 +63,8 @@ namespace Entities.Cart.Repository
         {
             try
             {
-                var entity = context.AspNetRoles.Find(id);
-                context.AspNetRoles.Remove(entity);
+                var entity = context.Products.Find(id);
+                context.Products.Remove(entity);
                 context.Entry(entity).State = EntityState.Deleted;
                 context.SaveChanges();
             }
@@ -73,13 +75,18 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public IEnumerable<AspNetRoles> GetAll()
+        public void Delete(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<Products> GetAll()
         {
             try
             {
-                var result = new List<AspNetRoles>();
+                var result = new List<Products>();
 
-                result = context.AspNetRoles.ToList();
+                result = context.Products.ToList();
 
                 return result;
             }
@@ -90,12 +97,12 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public AspNetRoles GetById(int id)
+        public Products GetById(int id)
         {
             try
             {
-                AspNetRoles result = null;
-                result = context.AspNetRoles.Find(id);
+                Products result = null;
+                result = context.Products.Find(id);
                 return result;
             }
             catch (Exception ex)
@@ -105,7 +112,12 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public void Update(AspNetRoles entity)
+        public Products GetById(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(Products entity)
         {
             try
             {

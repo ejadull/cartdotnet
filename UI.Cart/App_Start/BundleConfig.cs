@@ -46,6 +46,7 @@ namespace UI.Cart
 
                       ));
 
+
             bundles.Add(new StyleBundle("~/bundles/panelcss").Include(
                       "~/Content/admin-lte/plugins/fontawesome-free/css/all.min.css",
                       "~/Content/admin-lte/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css",
@@ -55,6 +56,16 @@ namespace UI.Cart
                       "~/Content/admin-lte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css",
                       "~/Content/admin-lte/plugins/daterangepicker/daterangepicker.css",
                       "~/Content/admin-lte/plugins/summernote/summernote-bs4.css"));
+
+
+            bundles.Add(new ScriptBundle("~/bundles/datatablejs").Include(
+                      "~/Content/admin-lte/plugins/datatables/jquery.dataTables.js",
+                      "~/Content/admin-lte/plugins/datatables-bs4/js/dataTables.bootstrap4.js",
+                      "~/Scripts/Spanish.js"
+                      ));
+            bundles.Add(new StyleBundle("~/bundles/datatablecss").Include(
+                      "~/Content/admin-lte/plugins/plugins/datatables-bs4/css/dataTables.bootstrap4.css"
+                      ));
 
         }
     }

@@ -1,6 +1,6 @@
-﻿using Entities.Cart.Repository;
+﻿using Entities.Cart;
 
-namespace Entities.Cart
+namespace DataAccess.Cart.Repository
 {
     public interface IAspNetRolesRepository : IRepository<AspNetRoles>
     {

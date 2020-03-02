@@ -185,11 +185,16 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\Panel\Controllers\CartItemsController.cs" />
+    <Compile Include="Areas\Panel\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\Panel\Controllers\DashBoardController.cs" />
+    <Compile Include="Areas\Panel\Controllers\ProductsController.cs" />
     <Compile Include="Areas\Panel\PanelAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ApiServicesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -236,6 +241,22 @@
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
     <Content Include="Areas\Panel\Views\DashBoard\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Shared\_LayoutVacio.cshtml" />
+    <Content Include="Areas\Panel\Views\Categories\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Products\Index.cshtml" />
+    <Content Include="Areas\Panel\Views\Categories\Details.cshtml" />
+    <Content Include="Areas\Panel\Views\Categories\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Categories\Delete.cshtml" />
+    <Content Include="Areas\Panel\Views\Categories\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\Products\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\Products\Delete.cshtml" />
+    <Content Include="Areas\Panel\Views\Products\Details.cshtml" />
+    <Content Include="Areas\Panel\Views\Products\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\CartItems\Create.cshtml" />
+    <Content Include="Areas\Panel\Views\CartItems\Delete.cshtml" />
+    <Content Include="Areas\Panel\Views\CartItems\Details.cshtml" />
+    <Content Include="Areas\Panel\Views\CartItems\Edit.cshtml" />
+    <Content Include="Areas\Panel\Views\CartItems\Index.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -365,6 +386,8 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Scripts\Spanish.js" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -378,6 +401,20 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic.Cart\BusinessLogic.Cart.csproj">
+      <Project>{fe67a7ba-52c9-40c6-8881-76c2e645a3fb}</Project>
+      <Name>BusinessLogic.Cart</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entities.Cart\Entities.Cart.csproj">
+      <Project>{35258502-c6dd-446f-baa5-7c0052b5440a}</Project>
+      <Name>Entities.Cart</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Helpers.Cart\Helpers.Cart.csproj">
+      <Project>{5ec26095-7802-47e3-9cc7-5ca122838660}</Project>
+      <Name>Helpers.Cart</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

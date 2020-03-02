@@ -1,24 +1,25 @@
-﻿using System;
+﻿using Entities.Cart;
+using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Validation;
 using System.Linq;
 
-namespace Entities.Cart.Repository
+namespace DataAccess.Cart.Repository
 {
-    public class AspNetUserLoginsRepository : IAspNetUserLoginsRepository
+    public class AspNetUserRepository : IAspNetRolesRepository
     {
         CartWebEntities context;
-        public AspNetUserLoginsRepository()
+        public AspNetUserRepository()
         {
             this.context = new CartWebEntities();
         }
- 
-        public void Create(AspNetUserLogins entity)
+
+        public void Create(AspNetRoles entity)
         {
             try
             {
-                context.AspNetUserLogins.Add(entity);
+                context.AspNetRoles.Add(entity);
                 context.Entry(entity).State = EntityState.Added;
                 context.SaveChanges();
             }
@@ -42,11 +43,11 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public void Delete(AspNetUserLogins entity)
+        public void Delete(AspNetRoles entity)
         {
             try
             {
-                context.AspNetUserLogins.Remove(entity);
+                context.AspNetRoles.Remove(entity);
                 context.Entry(entity).State = EntityState.Deleted;
                 context.SaveChanges();
             }
@@ -61,8 +62,8 @@ namespace Entities.Cart.Repository
         {
             try
             {
-                var entity = context.AspNetUserLogins.Find(id);
-                context.AspNetUserLogins.Remove(entity);
+                var entity = context.AspNetRoles.Find(id);
+                context.AspNetRoles.Remove(entity);
                 context.Entry(entity).State = EntityState.Deleted;
                 context.SaveChanges();
             }
@@ -73,13 +74,18 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public IEnumerable<AspNetUserLogins> GetAll()
+        public void Delete(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<AspNetRoles> GetAll()
         {
             try
             {
-                var result = new List<AspNetUserLogins>();
+                var result = new List<AspNetRoles>();
 
-                result = context.AspNetUserLogins.ToList();
+                result = context.AspNetRoles.ToList();
 
                 return result;
             }
@@ -90,12 +96,12 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public AspNetUserLogins GetById(int id)
+        public AspNetRoles GetById(int id)
         {
             try
             {
-                AspNetUserLogins result = null;
-                result = context.AspNetUserLogins.Find(id);
+                AspNetRoles result = null;
+                result = context.AspNetRoles.Find(id);
                 return result;
             }
             catch (Exception ex)
@@ -105,7 +111,12 @@ namespace Entities.Cart.Repository
             }
         }
 
-        public void Update(AspNetUserLogins entity)
+        public AspNetRoles GetById(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Update(AspNetRoles entity)
         {
             try
             {

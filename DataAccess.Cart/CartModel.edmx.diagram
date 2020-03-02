@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dda48e07823947d1bafc45bb7ad267f8" Name="Diagram1">
+      <Diagram DiagramId="dda48e07823947d1bafc45bb7ad267f8" Name="Diagram1" ZoomLevel="55">
         <EntityTypeShape EntityType="CartWebModel.C__MigrationHistory" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CartWebModel.AspNetRoles" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
         <EntityTypeShape EntityType="CartWebModel.AspNetUserClaims" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
@@ -13,6 +13,11 @@
         <AssociationConnector Association="CartWebModel.FK_dbo_AspNetUserClaims_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="CartWebModel.FK_dbo_AspNetUserLogins_dbo_AspNetUsers_UserId" ManuallyRouted="false" />
         <AssociationConnector Association="CartWebModel.AspNetUserRoles" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="CartWebModel.Categories" Width="1.5" PointX="3" PointY="6.375" />
+        <EntityTypeShape EntityType="CartWebModel.Products" Width="1.5" PointX="5.25" PointY="6" />
+        <EntityTypeShape EntityType="CartWebModel.CartItem" Width="1.5" PointX="7.5" PointY="6.25" />
+        <AssociationConnector Association="CartWebModel.FK_Products_Categories" />
+        <AssociationConnector Association="CartWebModel.FK_CartItem_Products" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

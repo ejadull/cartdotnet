@@ -30,5 +30,8 @@ namespace Entities.Cart
         public virtual DbSet<AspNetUserClaims> AspNetUserClaims { get; set; }
         public virtual DbSet<AspNetUserLogins> AspNetUserLogins { get; set; }
         public virtual DbSet<AspNetUsers> AspNetUsers { get; set; }
+        public virtual DbSet<Categories> Categories { get; set; }
+        public virtual DbSet<Products> Products { get; set; }
+        public virtual DbSet<CartItem> CartItem { get; set; }
     }
 }

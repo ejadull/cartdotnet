@@ -57,22 +57,47 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CartModel.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\AspNetRolesRepository.cs" />
+    <Compile Include="Repository\AspNetUserClaimsRepository.cs" />
+    <Compile Include="Repository\AspNetUserLoginsRepository.cs" />
+    <Compile Include="Repository\AspNetUsersRepository.cs" />
+    <Compile Include="Repository\CartItemRepository.cs" />
+    <Compile Include="Repository\CategoriesRepository.cs" />
+    <Compile Include="Repository\IAspNetRolesRepository.cs" />
+    <Compile Include="Repository\IAspNetUserClaimsRepository.cs" />
+    <Compile Include="Repository\IAspNetUserLoginsRepository.cs" />
+    <Compile Include="Repository\IAspNetUsersRepository.cs" />
+    <Compile Include="Repository\ICartItemRepository.cs" />
+    <Compile Include="Repository\ICategoriesRepository.cs" />
+    <Compile Include="Repository\IProductsRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\ProductsRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <EntityDeploy Include="CartModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>CartModel.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EntityDeploy>
     <None Include="CartModel.edmx.diagram">
       <DependentUpon>CartModel.edmx</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entities.Cart\Entities.Cart.csproj">
+      <Project>{35258502-c6dd-446f-baa5-7c0052b5440a}</Project>
+      <Name>Entities.Cart</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
